@@ -12,10 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('post', 'PostController@index');
-Auth::routes();
+    return view('blog.index');
+})->name('/');
+
+Route::get('/about', function () {
+    return view('blog.about');
+})->name('about');
+
+Route::get('/post', function () {
+    return view('blog.post');
+})->name('post');
+
+Route::get('/contact', function () {
+    return view('blog.contact');
+})->name('contact');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/post', function () {
